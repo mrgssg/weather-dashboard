@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/7fe3fe91ec.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
@@ -17,44 +16,46 @@
 </header>
 
   <div class="container-fluid">
-    <h4>City Search:</h4> 
-    <form class="d-flex" role="search">
-        <input id="city-search" type="text" placeholder="Enter City" aria-label="Search">
-        <button class="btn btn-outline-success" type="button"> <i class="fas fa-search"></i>
-        </button>
-    </form>
-  </div>
-
-  <form id="history"></form>
-
-
-<div id="todays-weather">
-  <div class="col-lg-10 card m-5" id="todays-weather">
-    <div  class="card-body">
-      <h3 id="city-name" class="city text-align: center"></h3>
-        <img id="current-weather">
-        <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="windspeed"></p>
+    <div class="row">
+      <div class="col-md-3 bg-default">
+        <h4 class="md-1">City Search:</h4> 
+          <div class="input-group mb-2">
+          <input id="enter-city" type="text" class="form-control" placeholder="Enter City" aria-label="Search">
+          </div>
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+      </div>
     </div>
   </div>
-</div>
 
+      <form id="history">
+      </form>
 
-
-<div class="row" id="fiveday-forecast">
-  <div class="col-12">
-    <h3>5-Day Forecast</h3>
+      <div class="col-lg-8">
+        <div class="row mr-0">
+          <div class="card col-lg-10 m-3" id="todays-weather">
+            <div class="card-body">
+              <h3 id="city-name" class="city-name align-middle"></h3>
+              <p id="temperature"></p>
+              <p id="humidity"></p>
+              <p id="wind-speed"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="fiveday-header">
+          <div class="col-8">
+            <h3>5-Day Forecast</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="forecast col-md-2 bg-blue text-white square"></div>
+          <div class="forecast col-md-2 bg-blue text-white square"></div>
+          <div class="forecast col-md-2 bg-blue text-white square"></div>
+          <div class="forecast col-md-2 bg-blue text-white square"></div>
+          <div class="forecast col-md-2 bg-blue text-white square"></div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="row"> 
-  <div class="col-md-2 forecast bg-blue text-white square"></div>
-  <div class="col-md-2 forecast bg-blue text-white square"></div>
-  <div class="col-md-2 forecast bg-blue text-white square"></div>
-  <div class="col-md-2 forecast bg-blue text-white square"></div>
-  <div class="col-md-2 forecast bg-blue text-white square"></div>
-</div>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
