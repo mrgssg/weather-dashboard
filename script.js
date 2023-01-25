@@ -17,12 +17,11 @@ $("#currentDay").text(today.format('dddd, MMMM Do YYYY'))
 searchButton.addEventlistener('click', getWeather); 
 
 function getWeather() {
-    fetch("https://api.openweathermap.org/data/2.5/weather?=e8254a1270fb2c8b6d2371a09bd4627a")
+    fetch("https://api.openweathermap.org/data/2.5/weather?=e8254a1270fb2c8b6d2371a09bd4627a" + city)
     .then(response => response.json()) 
     .then(data => {})
         return response.json()
     }
-
         city-name.innerHTML = response.data.name + " (" + month + "/" + day + "/" + year + ")";
         currentTemp.innerHTML = "Temperature: " + (response.data.main.temp) + " &#176F";
         currentHumidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
