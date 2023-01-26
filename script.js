@@ -8,18 +8,22 @@ var currentWind = document.getElementById("wind-speed");
 var history = document.getAnimations("history");
 var todaysWeather = document.getElementById("todays-weather");
 var today = moment();
-$("#currentDay").text(today.format('dddd, MMMM Do YYYY'))
+var weatherIcon = document.getElementById("weather-icon")
 
-https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+
 
 // event listener for city search button and area to populate current weather
 
 searchButton.addEventListener('click', getWeather); 
 function showCurrentWeather (weather) {
     nameEl.textContent=weather.city.name
+    // weatherIcon.textContent=weather.weather[0].icon
     currentTemp.textContent=`temp: ${weather.list[0].main.temp} °F`
     currentHumidity.textContent=`humidity: ${weather.list[0].main.humidity} %`
     currentWind.textContent=`wind: ${weather.list[0].wind.speed} mph`
+    
+    today.textContent=$("#current-day").text(today.format('dddd, MMMM Do YYYY'))
 }
 function show5Day (fiveDay){
     for (let i = 0; i < fiveDay.list.length; i=i+8) {
@@ -35,11 +39,6 @@ function getWeather() {
         showCurrentWeather(data)
         show5Day(data)
     })}
-
-        // city-name.innerHTML = response.data.name + " (" + month + "/" + day + "/" + year + ")";
-        // currentTemp.innerHTML = "Temperature: " + (response.data.main.temp) + " &#176F";
-        // currentHumidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
-        // currentWind.innerHTML = "Wind Speed: " + response.data.main.hunidity + " MPH";
 
 
     // 5 day forecast
