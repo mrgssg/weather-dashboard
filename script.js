@@ -11,8 +11,6 @@ var today = moment();
 var weatherIcon = document.getElementById("weather-icon")
 
 
-
-
 // event listener for city search button and area to populate current weather
 
 searchButton.addEventListener('click', getWeather); 
@@ -25,6 +23,9 @@ function showCurrentWeather (weather) {
     
     today.textContent=$("#current-day").text(today.format('dddd, MMMM Do YYYY'))
 }
+
+ // 5 day forecast
+
 function show5Day (fiveDay){
     for (let i = 0; i < fiveDay.list.length; i=i+8) {
    console.log(fiveDay.list[i])    
@@ -41,32 +42,10 @@ function getWeather() {
     })}
 
 
-    // 5 day forecast
-   
-    // fetch("https://api.openweathermap.org/data/2.5/weather?=e8254a1270fb2c8b6d2371a09bd4627a");
-    // {
-    //         // fiveDay.classlist;
-
-    //         var forecastEls = document.querySelectorAll(".forecast");
-    //         for (i = 0; i < forecastEls.length; i++) {
-    //             forecastEl[i].innerHTML = temperatur + wind + humidity;
-    //             var forecastDate = new Date(response.data.list);
-    //             var forecastDay = forecastDate.getDate(); + 1;
-    //             forecastDateEl.setAttribute("class", "mt-3 mb-0 forecast-date");
-    //             forecastDateEl.innerHTML = forecastMonth + "/" + forecastDay + "/" + forecastYear;
-    //             forecastEls[i].append(forecastDateEl);
-    //         }
-    //     };
-
-
 // city search history 
-// search.addEventListener("click", function () {
-//     var city = city.val;
-//     getWeather();
 //     searchHistory.push();
 //     localStorage.setItem("search", json.stringify(searchHistory));
 //     return SearchHistory();
-// })
 
 function searchHistory() {
     historyEl.innerHTML = "";
