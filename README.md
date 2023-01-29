@@ -6,5 +6,5 @@ A five day forecast will be presented as well for the selected city searched.  A
 Please click the following link to reach the deployed site:
  https://mrgssg.github.io/weather-dashboard/
 
- 
+ <img src="./dashboard.png" width ="400px">
 

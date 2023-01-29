@@ -17,18 +17,18 @@ searchButton.addEventListener('click', getWeather);
 function showCurrentWeather (weather) {
     nameEl.textContent=weather.city.name
     // weatherIcon.textContent=weather.weather[0].icon
-    currentTemp.textContent=`temp: ${weather.list[0].main.temp} °F`
-    currentHumidity.textContent=`humidity: ${weather.list[0].main.humidity} %`
-    currentWind.textContent=`wind: ${weather.list[0].wind.speed} mph`
-    
-    today.textContent=$("#current-day").text(today.format('dddd, MMMM Do YYYY'))
+    currentTemp.textContent=`Temp: ${weather.list[0].main.temp} °F`
+    currentHumidity.textContent=`Humidity: ${weather.list[0].main.humidity} %`
+    currentWind.textContent=`Wind: ${weather.list[0].wind.speed} mph`
+    today.textContent=$("#currentDay").text(today.format('MMMM Do YYYY'))
+    localStorage.setItem(nameEl, "");
 }
 
  // 5 day forecast
-
 function show5Day (fiveDay){
     for (let i = 0; i < fiveDay.list.length; i=i+8) {
-   console.log(fiveDay.list[i])    
+      
+   console.log(fiveDay.list[i]) 
     }
 }
 
@@ -41,11 +41,6 @@ function getWeather() {
         show5Day(data)
     })}
 
-
-// city search history 
-//     searchHistory.push();
-//     localStorage.setItem("search", json.stringify(searchHistory));
-//     return SearchHistory();
 
 function searchHistory() {
     historyEl.innerHTML = "";
