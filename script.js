@@ -5,7 +5,7 @@ var nameEl = document.getElementById("city-name");
 var currentTemp = document.getElementById("temperature");
 var currentHumidity = document.getElementById("humidity");
 var currentWind = document.getElementById("wind-speed");
-var history = document.getAnimations("history");
+var historyEl = document.getAnimations("history");
 var todaysWeather = document.getElementById("todays-weather");
 var today = moment();
 var weatherIcon = document.getElementById("weather-icon")
@@ -45,18 +45,9 @@ function getWeather() {
 function searchHistory() {
     historyEl.innerHTML = "";
     for (let i = 0; i < searchHistory.length; i++) {
-        const historyItem = document.createElement("input");
-        historyItem.setAttribute("type", "text");
-        historyItem.setAttribute("readonly", true);
-        historyItem.setAttribute("class", "form-control d-block bg-white");
-        historyItem.setAttribute("value", searchHistory[i]);
-        historyItem.addEventListener("click", function () {
-            getWeather(historyItem.value);
-        })
-        historyEl.append(history.Item);
-    }
-}
 
+}
+}
 
 
 
